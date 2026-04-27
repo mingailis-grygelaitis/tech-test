@@ -1,11 +1,15 @@
-# Interview Book API (pseudocode spec)
-
-Base URL: `http://127.0.0.1:8000` (default). JSON everywhere unless noted.
+# Interview Book API
 
 Shared type:
 
 ```
-Book = { id: number, title: string, author: string, year: number, available: boolean }
+Book = {
+        id: number,
+        title: string,
+        author: string,
+        year: number,
+        available: boolean
+      }
 ```
 
 ---
@@ -46,13 +50,9 @@ Book = { id: number, title: string, author: string, year: number, available: boo
   }
 }
 ```
-
-*(Interview stub: may only persist the flat `Book` fields; `catalog` is here so candidates talk through nested JSON.)*
-
 **Returns:** created `Book` (server assigns `id`)
 
 **Status:** `201` | `400` with `{ error: "title, author, year required" }`
-
 ---
 
 ## `PATCH /api/books/:id`
